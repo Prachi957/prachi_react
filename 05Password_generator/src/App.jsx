@@ -1,12 +1,10 @@
 import { useState, useCallback, useEffect, useRef } from 'react'
 
-
 function App() {
   const [length, setlength] = useState(8)
   const [numAllowed, setnumAllowed] = useState(false)
   const [charAllowed, setcharAllowed] = useState(false)
   const [password, setpassword] = useState(" ")
-
 
   const passGenerator = useCallback(() =>
     {
@@ -22,7 +20,7 @@ function App() {
       setpassword(pass)
 
     }, [length, numAllowed, charAllowed])
-
+    
   const PassRef = useRef(null);
 
   const CopyToClipBoard = () => {
@@ -40,15 +38,18 @@ function App() {
   return (
     <div className="bg-gray-800 fixed top-2 p-6 m-auto px-4 my-8 rounded-lg shadow-lg w-100">
     <h2 className="text-white text-lg text-center my-3">Password generator</h2>
+
    <div className='flex shadow rounded-lg overflow-hidden mb-4'>
     <input type="text" 
     value={password}
     placeholder="Password" 
-    className="w-60 px-3 py-3 rounded-md bg-white text-black placeholder-black ouline-none" 
+    className="w-60 px-3 py-3 rounded-md text-black bg-white ouline-none" 
     readOnly
     ref = {PassRef}/>
-    <button onClick={CopyToClipBoard} className="outline-2 text-black shrink-0 px-2 py-0.3">Copy</button>
+    <button onClick={CopyToClipBoard} className="outline-2 text-white bg-red-500 shrink-0 px-3 py-0.3">Copy</button>
     </div>
+
+
     <div className=' flex text-xm gap-x-2'></div>
     <div className='flex items-center gap-x-1'>
       <input 
