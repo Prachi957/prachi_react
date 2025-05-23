@@ -11,7 +11,7 @@ function App() {
       <div className='fixed flex flex-wrap justify-center top-12 inset-x-0 px-2'>
         <div className='flex flex-wrap bg-white justify-center gap-3 shadow-lg px-3 py-2 rounded-2xl'>
 
-          <button onClick = {() =>{setColor('red')}} className='outline-none px-5 rounded-2xl text-white shadow-lg'
+          <button onClick = {() =>{setColor('red')}} className='outline-none px-5 rounded-2xl text-white shadow-lg cursor-pointer'
           style = {{backgroundColor: "red"}}>Red</button>
 
           <button onClick = {() =>{setColor('green')}} className='outline-none px-5 py-3 gap-8 rounded-2xl text-white shadow-lg'

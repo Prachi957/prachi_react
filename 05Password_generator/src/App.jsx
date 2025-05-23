@@ -2,7 +2,7 @@ import { useState, useCallback, useEffect, useRef } from 'react'
 
 function App() {
   const [length, setlength] = useState(8)
-  const [numAllowed, setnumAllowed] = useState(false)
+  const [numAllowed, setnumAllowed] = useState(true)
   const [charAllowed, setcharAllowed] = useState(false)
   const [password, setpassword] = useState(" ")
 
@@ -11,7 +11,7 @@ function App() {
       let pass = ""
       let str = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"
       if(numAllowed == true) str += "0123456789"
-      if(charAllowed == true) str += "!@#$%^&*(){}+.?"
+      if(charAllowed == true) str += "!@#$%^&*(){}+.?[]`~,<>:;/"
 
       for (let i = 0; i < length; i++) {
         let charIndex = Math.floor(Math.random() * str.length )
@@ -46,9 +46,8 @@ function App() {
     className="w-60 px-3 py-3 rounded-md text-black bg-white ouline-none" 
     readOnly
     ref = {PassRef}/>
-    <button onClick={CopyToClipBoard} className="outline-2 text-white bg-red-500 shrink-0 px-3 py-0.3">Copy</button>
+    <button onClick={CopyToClipBoard} className="outline-2 text-black text-3xl bg-red-500 shrink-0 px-3 py-0.3">Copy</button>
     </div>
-
 
     <div className=' flex text-xm gap-x-2'></div>
     <div className='flex items-center gap-x-1'>
@@ -87,4 +86,4 @@ function App() {
 export default App
 
 
-//THIS PROJECT IS READY< YEAHHHHHH !!!
+//THIS PROJECT IS READY <> YEAHHHHHH !!!
