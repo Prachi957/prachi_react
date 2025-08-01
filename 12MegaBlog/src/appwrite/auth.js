@@ -1,4 +1,4 @@
-import config from "../config.js";
+import config from "../config/config.js";
 import {Client, Account, ID} from "appwrite";
 
 export class AuthService {
@@ -56,11 +56,7 @@ export class AuthService {
             
         }
     }
-
-
 }
-
-
 
 // Making object of class AuthService so that the methods of this class can be directly used by using Objectname.Methodname .
 
