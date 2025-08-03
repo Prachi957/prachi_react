@@ -45,7 +45,7 @@ export class Service{
         try {
            return await this.databases.getDocument(config.appwriteDatabaseId, config.appwriteCollectionId, slug)
         } catch (error) {
-            console.log("Appwrite Service :: getPost :: Error", error);
+            console.log("Appwrite Service :: getPost :: error", error);
             return false;
         }
     }
@@ -60,7 +60,7 @@ export class Service{
                 queries
             )
         } catch (error) {
-            console.log("Appwrite Service :: getPosts :: Error", error);
+            console.log("Appwrite Service :: getPosts :: error", error);
             return false;
         }
     }
@@ -90,11 +90,10 @@ export class Service{
         }
     }
 
-    getFilePreview(fileId) {
-        return this.bucket.getFilePreview(config.appwriteBucketId, fileId);
+    getFileView(fileId) {
+        return this.bucket.getFileView(config.appwriteBucketId, fileId);
 
     }
-
 }
 
 const service = new Service();

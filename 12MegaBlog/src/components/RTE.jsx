@@ -12,6 +12,7 @@ export default function RTE({name, control, label, defaultValue =""}) {
     control={control}
     render={({field: {onChange}}) => (
         <Editor
+        apiKey="4kkbendshiubzpvvz4idd17yv6mmy7c4f7n92nppk71stw5v"
         initialValue={defaultValue}
         init={{
             initialValue: defaultValue,
@@ -23,7 +24,6 @@ export default function RTE({name, control, label, defaultValue =""}) {
                 "autolink",
                 "lists",
                 "link",
-                "image",
                 "charmap",
                 "preview",
                 "anchor",
@@ -34,7 +34,6 @@ export default function RTE({name, control, label, defaultValue =""}) {
                 "insertdatetime",
                 "media",
                 "table",
-                "code",
                 "help",
                 "wordcount",
                 "anchor",

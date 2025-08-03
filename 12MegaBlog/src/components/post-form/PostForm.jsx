@@ -1,9 +1,10 @@
 import React, { useCallback } from "react";
 import { useForm } from "react-hook-form";
 import { Button, Input, RTE, Select } from "..";
-import appwriteService from "../../appwrite/config";
+import appwriteService from "../../appwrite/configure";
 import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
+
 
 export default function PostForm({ post }) {
     const { register, handleSubmit, watch, setValue, control, getValues } = useForm({
@@ -17,6 +18,12 @@ export default function PostForm({ post }) {
 
     const navigate = useNavigate();
     const userData = useSelector((state) => state.auth.userData);
+
+    let previewUrl = "";
+    if (post?.featuredImage) {
+        previewUrl = appwriteService.getFileView(post.featuredImage);
+    } else {
+    }
 
     const submit = async (data) => {
         if (post) {
@@ -98,10 +105,11 @@ export default function PostForm({ post }) {
                     accept="image/png, image/jpg, image/jpeg, image/gif"
                     {...register("image", { required: !post })}
                 />
+                {console.log("Post object:", post)}
                 {post && (
                     <div className="w-full mb-4">
                         <img
-                            src={appwriteService.getFilePreview(post.featuredImage)}
+                            src={appwriteService.getFileView(post.featuredImage)}
                             alt={post.title}
                             className="rounded-lg"
                         />
